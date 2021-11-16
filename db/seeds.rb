@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+temp = User.last
+House.create!(name: 'Monterrey mansion', description: 'very nice mansion in monterrey mexico', user: temp)
