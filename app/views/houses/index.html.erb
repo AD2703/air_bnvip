@@ -1,7 +1,9 @@
 <% @houses.each do |house| %>
 <%= house.name %>
 <%= house.price %>
-<% house.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
-<% end %>
+  <% house.photos.each do |photo| %>
+    <%= link_to house_path(house) do  %>
+      <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
+    <% end %>
+  <% end %>
 <% end %>
