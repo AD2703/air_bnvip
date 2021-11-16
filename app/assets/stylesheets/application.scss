@@ -55,3 +55,9 @@ a {
 p{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.carousel-inner{
+  img {
+    height: 340px;
+    border-radius: 4px;
+  }
+}
