@@ -1,7 +1,30 @@
-<% @houses.each do |house| %>
-<%= house.name %>
-<%= house.price %>
-<% house.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
-<% end %>
-<% end %>
+<div class="banner2" style="background-image: url(https://wallpaperaccess.com/full/5544138.jpg);">
+    <h2>Houses in Spain</h2>
+</div>
+
+<div class="container">
+  <div class="row">
+  <% @houses.each do |house| %>
+    <div class="col-6">
+      <div class="card">
+        <%= cl_image_tag house.photos[0].key , alt: "Poster", class:"card-image", height: 300 %>
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+          <h5 class="card-title"><strong><%=  house.name %> </strong></h5>
+          <h4><small> <strong><%=house.price%> </strong>€ / night </small></h4>
+        </div>
+          <p class="card-text"><%=  house.description %></p>
+          <div class="d-flex justify-content-between">
+            <p class="card-text"><small class="text-muted"><%= house.address %> / <%= house.country %></small></p>
+            <button type="button" class="btn btn-primary float-right"><%= link_to 'See more', house_path(house) , :class => "button" %></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="con">
+  <button type="button" class="btn btn-success"><%= link_to "Add a house", new_house_path(@house) , :class => "button" %></button>
+</div>
