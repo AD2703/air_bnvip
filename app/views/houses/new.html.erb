@@ -1,5 +1,6 @@
-<h2>Add your offer </h2>
 <div class="form">
+<h2>Add a home</h2>
+<br>
 <%= simple_form_for(@house) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
@@ -11,6 +12,6 @@
   <br>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <br>
-  <%= f.submit "Save Form", class: "btn btn-primary float-right"%>
+  <%= f.submit "Save", class: "btn btn-primary float-right"%>
 <% end %>
 </div>

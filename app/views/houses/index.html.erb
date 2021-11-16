@@ -1,6 +1,33 @@
-<div class="banner2" style="background-image: url(https://wallpaperaccess.com/full/5544138.jpg);">
-    <h2>Houses in Spain</h2>
+<% if @country == "Italy" %>
+<div class="banner2" style="background-image: url(https://res.cloudinary.com/dxlitvtog/image/upload/v1637072222/Italy_ez262w.jpg);">
+    <h2>Houses in <%= @country %></h2>
 </div>
+<% end %>
+<% if @country == "México" %>
+<div class="banner2" style="background-image: url(https://res.cloudinary.com/dxlitvtog/image/upload/v1637072223/Me%CC%81xico_gaxrkt.jpg);">
+    <h2>Houses in <%= @country %></h2>
+</div>
+<% end %>
+<% if @country == "Spain" %>
+<div class="banner2" style="background-image: url(https://res.cloudinary.com/dxlitvtog/image/upload/v1637072224/Spain_wgkhrd.jpg);">
+    <h2>Houses in <%= @country %></h2>
+</div>
+<% end %>
+<% if @country == "Belgium" %>
+<div class="banner2" style="background-image: url(https://res.cloudinary.com/dxlitvtog/image/upload/v1637072219/Belgium_solqxn.jpg);">
+    <h2>Houses in <%= @country %></h2>
+</div>
+<% end %>
+<% if @country == "Brazil" %>
+<div class="banner2" style="background-image: url(https://res.cloudinary.com/dxlitvtog/image/upload/v1637072220/Brazil_ehma3w.jpg);">
+    <h2>Houses in <%= @country %></h2>
+</div>
+<% end %>
+<% if @country == "Catalunya" %>
+<div class="banner2" style="background-image: url(https://res.cloudinary.com/dxlitvtog/image/upload/v1637072221/Catalunya_g9nqbv.jpg);">
+    <h2>Houses in <%= @country %></h2>
+</div>
+<% end %>
 
 <div class="container">
   <div class="row">
@@ -28,4 +55,3 @@
 <div class="con">
   <button type="button" class="btn btn-success"><%= link_to "Add a house", new_house_path(@house) , :class => "button" %></button>
 </div>
-

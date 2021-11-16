@@ -1,6 +1,11 @@
 class HousesController < ApplicationController
   def index
-    @houses = House.all
+    if params[:country]
+      @country = params[:country]
+      @houses = House.where(country: @country)
+    else
+      @houses = House.all
+    end
   end
 
   def show
