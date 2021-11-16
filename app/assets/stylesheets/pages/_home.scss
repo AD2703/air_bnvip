@@ -1,1 +1,89 @@
 // Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 223px 0;
+  height: 550px;
+}
+
+.banner h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.banner p {
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.btn-ghost {
+  position: absolute;
+  margin-left: 39%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: white;
+  border: 2px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  color: white;
+}
+h5, h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin: 60px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
