@@ -28,16 +28,17 @@
   margin-top: 0px;
 }
 
-.banner2 {
+.banner {
   height: 65vh;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.banner2 h2 {
+.banner h2 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -53,4 +54,10 @@ a {
 
 p{
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.carousel-inner{
+  img {
+    height: 340px;
+    border-radius: 4px;
+  }
 }
