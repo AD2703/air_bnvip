@@ -32,9 +32,12 @@ photo2 = URI.open('https://wallpaperaccess.com/full/5089971.jpg')
 photo3 = URI.open('https://p4.wallpaperbetter.com/wallpaper/79/352/53/modern-architecture-nature-landscape-wallpaper-preview.jpg')
 photo4 = URI.open('https://wallpaperaccess.com/full/1126781.jpg')
 photo5 = URI.open('https://i.pinimg.com/736x/b3/7b/af/b37baf64e146e19e2009eba87c8fba66.jpg')
-
+photo6 = URI.open('https://aws.admagazine.com/prod/designs/v1/assets/620x413/68136.jpg')
+photo7 = URI.open('https://casaydiseno.com/wp-content/uploads/2016/07/decoracion.patios-lujosos.modernos.jpg')
 
 house1.photos.attach(io: photo1, filename: 'nes.png', content_type: 'image/png')
+house1.photos.attach(io: photo6, filename: 'nes.png', content_type: 'image/png')
+house1.photos.attach(io: photo7, filename: 'nes.png', content_type: 'image/png')
 house2.photos.attach(io: photo2, filename: 'nes.png', content_type: 'image/png')
 house3.photos.attach(io: photo3, filename: 'nes.png', content_type: 'image/png')
 house4.photos.attach(io: photo4, filename: 'nes.png', content_type: 'image/png')
