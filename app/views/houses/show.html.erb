@@ -1,5 +1,9 @@
-<h2 class='title-house'><%= @house.name %></h2>
+<% @house.photos.each do |photo| %>
+<div class="banner2" style="background-image: url(<%= cl_image_path photo.key %>);">
+<% end %>
+    <h2><%= @house.name %></h2>
+</div>
+<br>
 
-<p class='description'><%= @house.description %></p>
-
-<%= image_tag('mansion.jpg') %>
+<p class="text-description"><%= @house.description %></p>
+<p> price per night € <%= @house.price %></p>
