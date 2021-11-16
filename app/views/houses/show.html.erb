@@ -1,9 +1,33 @@
-<% @house.photos.each do |photo| %>
-<div class="banner2" style="background-image: url(<%= cl_image_path photo.key %>);">
-<% end %>
-    <h2><%= @house.name %></h2>
-</div>
-<br>
 
-<p class="text-description"><%= @house.description %></p>
-<p> price per night € <%= @house.price %></p>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <% house_sample = @house.photos.sample %>
+      <%= cl_image_tag house_sample.key, class: "d-block w-100" %>
+      <div class="carousel-caption d-none d-md-block">
+        <h5><%= @house.name %></h5>
+        <p><%= @house.description %></p>
+      </div>
+    </div>
+    <% @house.photos.each do |photo| %>
+    <div class="carousel-item">
+      <h1><%= @house.name %></h1>
+      <%= cl_image_tag photo.key, class: "d-block w-100" %>
+      <div class="carousel-caption d-none d-md-block">
+        <h5><%= @house.name %></h5>
+        <p><%= @house.description %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
