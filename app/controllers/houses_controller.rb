@@ -7,13 +7,14 @@ end
 
 def create
   house = House.new(house_params)
+  @house.user = current_user
   house.save
-  redirect_to house_path
+  redirect_to houses_path
 end
 
 
 def house_params
-    params.require(:house).permit( :name, :description, :photos [])
+    params.require(:house).permit(:name, :description, photos: [])
 end
 
 end
