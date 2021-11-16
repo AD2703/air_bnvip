@@ -1,16 +1,9 @@
-<h2>Add your offer </h2>
-<div class="form">
 <%= simple_form_for(@house) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :price %>
   <%= f.input :address %>
-  <br>
   <%= f.select :country, options_for_select(["Spain", "México", "Italy", "Belgium", "Brazil", "Catalunya"]) %>
-  <br>
-  <br>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <br>
   <%= f.submit "Save Form", class: "btn btn-primary float-right"%>
 <% end %>
-</div>
