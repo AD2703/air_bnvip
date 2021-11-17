@@ -1,12 +1,17 @@
 class ReviewsController < ApplicationController
+  def new
+    @review = Review.new
+  end
+
   def create
-    @review = Review.new(review_params)
     @house = House.find(params[:house_id])
+    @review = Review.new(review_params)
     @review.house = @house
+    @review.user = current_user
     if @review.save
       redirect_to houses_path(@house)
     else
-      render 'house/show'
+      render 'houses/show'
     end
   end
 
