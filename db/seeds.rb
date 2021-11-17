@@ -1,5 +1,4 @@
 require "open-uri"
-require "byebug"
 
 Booking.delete_all
 House.delete_all
