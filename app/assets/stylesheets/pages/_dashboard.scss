@@ -1,0 +1,15 @@
+.card-dashboard{
+    display: flex;
+    flex-direction: row;
+    height: 30vh;
+}
+
+.card-dash-img{
+  width: 50%;
+  object-fit: cover;
+}
+
+.card-dash-info{
+  width: 50%;
+  padding: 18px;
+}

@@ -10,7 +10,6 @@ user1 = User.create(email: 'filipo@gmail.com', password: 'la pizza he molto buon
 user2 = User.create(email: 'carles@gmail.com', password: '123456')
 user3 = User.create(email: 'max@gmail.com', password: '123456')
 user4 = User.create(email: 'alejandro@gmail.com', password: '123456')
-puts "finished users"
 
 photo1 = URI.open('https://p4.wallpaperbetter.com/wallpaper/76/280/48/architecture-building-design-house-wallpaper-preview.jpg')
 photo2 = URI.open('https://wallpaperaccess.com/full/5089971.jpg')
