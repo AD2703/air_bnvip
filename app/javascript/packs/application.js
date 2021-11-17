@@ -19,7 +19,6 @@ require("channels")
 
 import { initFlatpickr } from "../plugins/flatpickr";
 
-initFlatpickr();
 // flat pickr is used for calendar
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -32,6 +31,12 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete'
 
 document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  // initSelect2();
+
+  initFlatpickr();
+});
   initMapbox();
   initAutocomplete();
 })
+

@@ -7,14 +7,13 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "flatpickr/dist/flatpickr";
 @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 
-// Calendar
-@import "flatpickr/dist/flatpickr";
 
 .card-category {
   background-size: cover;
@@ -69,7 +68,8 @@ p{
 }
 
 .con1 {
-  margin: 250px;
+  margin-left: 250px;
+  margin-right: 250px;
   margin-top: 0px;
   background-color: white;
   padding: 150px;
@@ -77,6 +77,8 @@ p{
   padding-bottom: 150px;
   button{
     margin-top: 50px;
+    color: white !important;
+    text-decoration: none;
   }
   ul{
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -92,4 +94,18 @@ p{
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+}
+
+.date-booked {
+  margin-left: 250px;
+  margin-top: 50px;
+  margin-right: 250px;
+  background-color: white;
+  padding: 150px;
+  padding-top: 75px;
+  padding-bottom: 150px;
+}
+
+.date-booked .submission {
+  padding-top: 20px;
 }

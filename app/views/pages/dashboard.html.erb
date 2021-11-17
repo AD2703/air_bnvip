@@ -1,0 +1,6 @@
+<% @user.bookings.each do |booking| %>
+  <%= @user.email %>
+  <%= booking.house.name %>
+  <%= booking.start_date %>
+  <%= booking.end_date %>
+<% end %>
