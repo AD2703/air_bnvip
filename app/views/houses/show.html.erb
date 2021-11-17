@@ -3,10 +3,6 @@
         <% @house.photos.each_with_index do |photo,index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
         <%= cl_image_tag photo.key, class: "d-block w-100" %>
-        <div class="carousel-caption d-none d-md-block">
-          <h5><%= @house.name %></h5>
-          <p><%= @house.description %></p>
-        </div>
       </div>
     <% end %>
   </div>
@@ -18,4 +14,34 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div>
+
+<div class="con1">
+  <div class="d-flex justify-content-between">
+    <h2><%= @house.name %></h2>
+    <h2><%= @house.price %>€ / night</h2>
+  </div>
+  <h4><%= @house.description %></h4>
+  <br>
+  <h6><strong>Commodities</strong></h3>
+  <ul>
+  <li>10 Bedrooms</li>
+  <li>9 Full Bathrooms</li>
+  <li>Full equiped Kitchen with a chef 24/7</li>
+  <li>Elevator</li>
+  <li>Car garage (space for 5 cars)</li>
+  <li>Full fridge</li>
+  <li>Pool with views</li>
+  <li>Jacuzzi with hydro massage</li>
+  <li>Sauna</li>
+
+  </ul>
+  <div class="location">
+    <h6>Address: <%= @house.address %></h6>
+    <h6>Country: <%= @house.country %></h6>
+  </div>
+  <div class="d-flex justify-content-between">
+  <button class="btn btn-outline-danger"><%= link_to 'Delete', houses_path, method: :delete, data: {confirm: "Are you sure?"} %></button>
+  <button class="btn btn-outline-warning"><%= link_to 'Edit', edit_house_path(@house) %></button>
+  </div>
 </div>
