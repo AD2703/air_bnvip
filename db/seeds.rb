@@ -155,25 +155,25 @@ house20.photos.attach(io: File.open(photo22), filename: 'nes.png', content_type:
 house20.save
 
 house21 = House.create(name: 'Luxury Chalet', description: "Newly constructed chalet in Catalonia", user: user1,
-                      address: "Olot, Catalunya, Spain", price: 9000, country: 'Catalonia')
+                      address: "Olot, Catalunya, Spain", price: 9000, country: 'Catalunya')
 house21.photos.attach(io: File.open(photo11), filename: 'nes.png', content_type: 'image/png')
 house21.photos.attach(io: File.open(photo12), filename: 'nes.png', content_type: 'image/png')
 house21.save
 
 house22 = House.create(name: 'Luxury Villa', description: "Modern villa in catalonia", user: user1,
-                      address: "Cadaqués, Catalunya, Spain", price: 8000, country: 'Catalonia')
+                      address: "Cadaqués, Catalunya, Spain", price: 8000, country: 'Catalunya')
 house22.photos.attach(io: File.open(photo13), filename: 'nes.png', content_type: 'image/png')
 house22.photos.attach(io: File.open(photo14), filename: 'nes.png', content_type: 'image/png')
 house22.save
 
 house23 = House.create(name: 'Luxury apartment', description: "Modern style apartment in catalonia", user: user1,
-                      address: "Barcelona, Catalunya, Spain", price: 7000, country: 'Catalonia')
+                      address: "Barcelona, Catalunya, Spain", price: 7000, country: 'Catalunya')
 house23.photos.attach(io: File.open(photo15), filename: 'nes.png', content_type: 'image/png')
 house23.photos.attach(io: File.open(photo4), filename: 'nes.png', content_type: 'image/png')
 house23.save
 
 house24 = House.create(name: 'Luxury mansion', description: "Enormous mansion in catalonia", user: user1,
-                      address: "Girona, Catalunya, Spain", price: 5000, country: 'Catalonia')
+                      address: "Girona, Catalunya, Spain", price: 5000, country: 'Catalunya')
 house24.photos.attach(io: File.open(photo17), filename: 'nes.png', content_type: 'image/png')
 house24.photos.attach(io: File.open(photo18), filename: 'nes.png', content_type: 'image/png')
 house24.save
