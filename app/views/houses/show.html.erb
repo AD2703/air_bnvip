@@ -54,3 +54,13 @@
 <div class="submission"><%= f.submit %></div>
 <% end %>
 </div>
+
+<div class="con2">
+<h3>Bookings:</h3>
+<% @house.bookings.each do |booking| %>
+  <div class="d-flex justify-content-between">
+    <h5>- <%= booking.start_date %> / <%= booking.end_date %></h5>
+    <p> by: <%= booking.user.email %> </p>
+  </div>
+<% end %>
+</div>
