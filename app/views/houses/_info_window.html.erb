@@ -1,0 +1,4 @@
+<h4><%= house.name %></h4>
+<%= cl_image_tag house.photos[0].key , alt: "Poster", height: 100 %>
+<p><strong><%= house.price %> €</strong> / night</p>
+<button type="button" class="btn btn-primary"><%= link_to 'See more', house_path(house) , :class => "button" %></button>
