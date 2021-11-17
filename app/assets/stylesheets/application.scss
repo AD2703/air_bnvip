@@ -12,6 +12,9 @@
 @import "components/index";
 @import "pages/index";
 
+// Calendar
+@import "flatpickr/dist/flatpickr";
+
 .card-category {
   background-size: cover;
   background-position: center;
