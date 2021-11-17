@@ -18,6 +18,11 @@ class HousesController < ApplicationController
   def show
     @house = House.find(params[:id])
     @booking = Booking.new
+    @markers = [{
+      lat: @house.latitude,
+      lng: @house.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { house: @house })
+    }]
   end
 
   def new
