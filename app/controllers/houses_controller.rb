@@ -6,6 +6,13 @@ class HousesController < ApplicationController
     else
       @houses = House.all
     end
+    @markers = @houses.geocoded.map do |house|
+      {
+        lat: house.latitude,
+        lng: house.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { house: house })
+      }
+    end
   end
 
   def show
