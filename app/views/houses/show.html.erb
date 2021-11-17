@@ -41,7 +41,16 @@
     <h6>Country: <%= @house.country %></h6>
   </div>
   <div class="d-flex justify-content-between">
-  <button class="btn btn-outline-danger"><%= link_to 'Delete', houses_path, method: :delete, data: {confirm: "Are you sure?"} %></button>
-  <button class="btn btn-outline-warning"><%= link_to 'Edit', edit_house_path(@house) %></button>
+  <button class="btn btn-danger button"><%= link_to 'Delete', houses_path, method: :delete, data: {confirm: "Are you sure?"} %></button>
+  <button class="btn btn-primary button"><%= link_to 'Edit', edit_house_path(@house) %></button>
   </div>
+</div>
+
+<div class="date-booked">
+<h3>Book now!</h3>
+<%= simple_form_for [@house,@booking] do |f| %>
+<%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+<div class="submission"><%= f.submit %></div>
+<% end %>
 </div>
