@@ -1,6 +1,13 @@
 <% @user.bookings.each do |booking| %>
-  <%= @user.email %>
-  <%= booking.house.name %>
-  <%= booking.start_date %>
-  <%= booking.end_date %>
+  <div class="card card-dashboard">
+
+        <%= cl_image_tag booking.house.photos.first.key, class: "card-dash-img"%>
+      <div class="card-dash-info">
+        <p>Email: <%= @user.email %></p>
+        <p>House Booked: <%= booking.house.name %></p>
+        <p>Start: <%= booking.start_date %></p>
+        <p>End: <%= booking.end_date %></p>
+
+      </div>
+  </div>
 <% end %>
