@@ -23,9 +23,9 @@ house2 = House.create(name: 'Mansion', description: "very nice villa in Brazil w
 house3 = House.create(name: 'Luxury villa', description: "very nice villa in Belgium with amazing views", user: user3,
                       address: "papichulo, 43", price: 7000, country: 'Belgium')
 house4 = House.create(name: 'Luxury villa', description: "very nice villa in Italy with amazing views", user: user4,
-                      address: "papichulo, 44", price: 7000, country: 'Italy')
+                      address: "Rome, Rome, Italy", price: 7000, country: 'Italy')
 house5 = House.create(name: 'Luxury villa', description: "very nice villa in Mexico with amazing views", user: user1,
-                      address: "papichulo, 47", price: 7000, country: 'Mexico')
+                      address: "Mexico City, Mexico", price: 7000, country: 'México')
 
 photo1 = URI.open('https://p4.wallpaperbetter.com/wallpaper/76/280/48/architecture-building-design-house-wallpaper-preview.jpg')
 photo2 = URI.open('https://wallpaperaccess.com/full/5089971.jpg')
