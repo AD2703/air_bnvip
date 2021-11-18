@@ -54,7 +54,7 @@ class HousesController < ApplicationController
   def destroy
     @house = House.find(params[:id])
     @house.destroy
-    redirect_to house_path
+    redirect_to my_houses_path
   end
 
   private
