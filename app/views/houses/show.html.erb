@@ -72,3 +72,18 @@
   </div>
 <% end %>
 </div>
+
+
+<div class="con2">
+<div class="d-flex justify-content-between">
+<h4>- Reviews:</h4>
+<ul>
+  <% @house.reviews.each do |review| %>
+      <li><%(review.rating.to_i).times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      / <%=review.content%></li>
+    <% end %>
+</ul>
+</div>
+</div>

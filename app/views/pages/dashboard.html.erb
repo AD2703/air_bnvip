@@ -9,5 +9,7 @@
         <p>End: <%= booking.end_date %></p>
 
       </div>
+      <%= button_to 'Add Review', new_booking_review_path(booking),method: :get, class: "btn btn-success float-right" %>
+
   </div>
 <% end %>
