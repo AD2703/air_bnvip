@@ -6,7 +6,7 @@
         <p>House Booked: <%= booking.house.name %></p>
         <p>Start: <%= booking.start_date %></p>
         <p>End: <%= booking.end_date %></p>
-        <p>Total price: <strong><%= booking.house.price * (booking.days) %>€ </strong> </p>
+        <p>Total price: <strong><%= booking.price %>€ </strong> </p>
       </div>
       <%= button_to 'Add Review', new_booking_review_path(booking),method: :get, class: "btn btn-success m-2" %>
       <%= button_to 'Go to the house', house_path(booking.house),method: :get, class: "btn btn-outline-info position-absolute bottom-0 end-0 m-2" %>

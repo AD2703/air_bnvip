@@ -9,4 +9,15 @@ class User < ApplicationRecord
   #houses you own
   has_many :user_houses, foreign_key: "user_id", class_name: "House"
   validates :email, format: { with: /\A.*@.*\.com\z/ }
+
+  def total_benefit
+    sum = 0
+    self.user_houses.each do |house|
+      if house.ben.present?
+        sum += house.ben
+      end
+    end
+    return sum
+  end
+
 end
