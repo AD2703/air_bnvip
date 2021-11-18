@@ -40,6 +40,9 @@
     <h6>Address: <%= @house.address %></h6>
     <h6>Country: <%= @house.country %></h6>
   </div>
+  <h4>Average Reviews: <%@house.avg_review.times do %>
+            <i class="fas fa-star"></i>
+          <% end %></h4>
 </div>
 
 <div class="mapxx">
@@ -62,15 +65,13 @@
 
 
 <div class="con2">
-<div class="d-flex justify-content-between">
 <h4>- Reviews:</h4>
 <ul>
   <% @house.reviews.each do |review| %>
       <li><%(review.rating.to_i).times do %>
         <i class="fas fa-star"></i>
       <% end %>
-      / <%=review.content%></li>
+      / <%=review.content%>
     <% end %>
 </ul>
-</div>
 </div>
