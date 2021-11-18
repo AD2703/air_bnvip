@@ -8,5 +8,4 @@ class User < ApplicationRecord
   has_many :houses, through: :bookings
   #houses you own
   has_many :user_houses, foreign_key: "user_id", class_name: "House"
-
 end

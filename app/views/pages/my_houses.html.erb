@@ -1,0 +1,29 @@
+<% @user.user_houses.each do |house| %>
+  <div class="card">
+    <%= cl_image_tag house.photos[0].key , alt: "Poster", class:"card-image", height: 300 %>
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <h4 class="card-title"><strong><%=  house.name %> </strong></h4>
+        <button type="button" class="btn btn-success float-right"><%= link_to 'See house page', house_path(house) , :class => "button" %></button>
+      </div>
+          <p class="card-text"><%=  house.description %></p>
+      <div class="d-flex justify-content-between">
+        <p class="card-text"><small class="text-muted"><%= house.address %> / <%= house.country %></small></p>
+      </div>
+      <br>
+      <div class="d-flex justify-content-between">
+        <h5 class="card-title"><strong>House Bookings: </strong></h5>
+        <h4><small> Price per night = <strong><%=house.price%> </strong>€</small></h4>
+      </div>
+      <ul>
+      <% house.bookings.each do |booking| %>
+        <li><%= booking.start_date %> / <%= booking.end_date %>  by: <%= booking.user.email %> </li>
+      <% end %>
+      </ul>
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-primary button"><%= link_to 'Edit', edit_house_path(house) , :class => "button"  %></button>
+        <button class="btn btn-danger button"><%= link_to 'Delete', houses_path, method: :delete, data: {confirm: "Are you sure?"} , :class => "button"  %></button>
+      </div>
+    </div>
+  </div>
+<% end %>
