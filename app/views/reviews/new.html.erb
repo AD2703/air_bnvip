@@ -1,5 +1,12 @@
+<div class="form">
+<h2>Add a rating</h2>
+<br>
+
 <%= simple_form_for [ @booking, @review ] do |f| %>
   <%= f.input :content %>
-  <%= f.input :rating, :collection => [0, 1, 2, 3, 4, 5]%>
+  <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", id: 'review_rating' %>
+  <br>
   <%= f.submit "Submit review", class: "btn btn-primary float-right" %>
+
 <% end %>
+</div>
