@@ -18,6 +18,8 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initStarRating } from '../plugins/init_star_rating';
+
 
 // flat pickr is used for calendar
 // ----------------------------------------------------
@@ -42,7 +44,10 @@ document.addEventListener('turbolinks:load', () => {
     icon: "success"
   });
   SweetAlertButton();
+  initStarRating();
 
 
 
 });
+
+//stars
