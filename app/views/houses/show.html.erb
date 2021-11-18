@@ -53,7 +53,7 @@
   </div>
 </div>
 
-<div class="date-booked">
+<div class="date-booked" data-dates="<%= @unavailable_dates.to_json %>">
 <h3>Book now!</h3>
 <%= simple_form_for [@house,@booking] do |f| %>
 <%= f.label "Dates" %>
