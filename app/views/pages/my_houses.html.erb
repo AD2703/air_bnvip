@@ -56,7 +56,7 @@
         <br>
         <div class="d-flex justify-content-between">
           <button class="btn btn-primary button"><%= link_to 'Edit', edit_house_path(house) , :class => "button"  %></button>
-          <button class="btn btn-danger button"><%= link_to 'Delete', houses_path, method: :delete, data: {confirm: "Are you sure?"} , :class => "button"  %></button>
+          <button class="btn btn-danger button"><%= link_to 'Delete', house_path(house), method: :delete, data: {confirm: "Are you sure?"} , :class => "button"  %></button>
         </div>
       </div>
     </div>

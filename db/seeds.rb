@@ -1,5 +1,6 @@
 require "open-uri"
 
+Review.delete_all
 Booking.delete_all
 House.delete_all
 User.delete_all
