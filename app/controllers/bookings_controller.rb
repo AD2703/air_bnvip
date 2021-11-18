@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
 
   def create
     @house = House.find(params[:house_id])
-    if @current_user == @house.user
+    if current_user == @house.user
       flash[:alert] = "You cannot book your own house!"
     else
       @start_date = Date.parse(booking_params[:start_date])

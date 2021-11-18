@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
   end
+
+  def my_houses
+    @user = current_user
+  end
 end

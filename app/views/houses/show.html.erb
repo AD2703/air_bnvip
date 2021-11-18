@@ -40,10 +40,6 @@
     <h6>Address: <%= @house.address %></h6>
     <h6>Country: <%= @house.country %></h6>
   </div>
-  <div class="d-flex justify-content-between">
-  <button class="btn btn-danger button"><%= link_to 'Delete', houses_path, method: :delete, data: {confirm: "Are you sure?"} %></button>
-  <button class="btn btn-primary button"><%= link_to 'Edit', edit_house_path(@house) %></button>
-  </div>
 </div>
 
 <div class="mapxx">
@@ -59,17 +55,8 @@
 <%= simple_form_for [@house,@booking] do |f| %>
 <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-<div class="submission"><%= f.submit %></div>
-<% end %>
+<div class="submission btn btn-primary" id= "sweet-alert-demo">Confirm
 </div>
-
-<div class="con2">
-<h3>Bookings:</h3>
-<% @house.bookings.each do |booking| %>
-  <div class="d-flex justify-content-between">
-    <h5>- <%= booking.start_date %> / <%= booking.end_date %></h5>
-    <p> by: <%= booking.user.email %> </p>
-  </div>
 <% end %>
 </div>
 
