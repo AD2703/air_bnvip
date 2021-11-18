@@ -25,15 +25,24 @@ import { initFlatpickr } from "../plugins/flatpickr";
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
+import { initSweetalert, SweetAlertButton } from '../plugins/init_sweetalert';
 // External imports
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete'
-
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
   initAutocomplete();
   initFlatpickr();
+  initSweetalert('#sweet-alert-demo', {
+    title: "A nice alert",
+    text: "This is a great alert, isn't it?",
+    icon: "success"
+  });
+  SweetAlertButton();
+
+
+
 });
