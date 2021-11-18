@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :houses, through: :bookings
   #houses you own
   has_many :user_houses, foreign_key: "user_id", class_name: "House"
+  validates :email, format: { with: /\A.*@.*\.com\z/ }
 
   def total_benefit
     sum = 0
@@ -18,4 +19,5 @@ class User < ApplicationRecord
     end
     return sum
   end
+
 end
