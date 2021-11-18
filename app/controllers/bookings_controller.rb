@@ -4,10 +4,11 @@ class BookingsController < ApplicationController
     if current_user == @house.user
       flash[:alert] = "You cannot book your own house!"
     else
-      @start_date = Date.parse(booking_params[:start_date])
-      @end_date = Date.parse(booking_params[:end_date])
-      @days = (@end_date - @start_date).to_i + 1
-      @booking = Booking.new(booking_params)
+      dates = params[:booking][:start_date].split()
+      start_date = Date.parse(dates[0])
+      end_date = Date.parse(dates[2])
+      @days = (end_date - start_date).to_i + 1
+      @booking = Booking.new(start_date: start_date, end_date: end_date)
       @booking.house = @house
       @price = @house.price
       @total = @price * @days
@@ -17,9 +18,4 @@ class BookingsController < ApplicationController
     redirect_to house_path(@house)
   end
 
-  private
-
-  def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
-  end
 end

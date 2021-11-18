@@ -1,5 +1,5 @@
 <%= link_to %>
-<% @user.bookings.each do |booking| %>
+<% @bookings.each do |booking| %>
   <div class="card card-dashboard">
 
         <%= cl_image_tag booking.house.photos.first.key, class: "card-dash-img"%>
@@ -8,7 +8,7 @@
         <p>House Booked: <%= booking.house.name %></p>
         <p>Start: <%= booking.start_date %></p>
         <p>End: <%= booking.end_date %></p>
-        <p>Total price: <strong><%= booking.house.price * ((booking.end_date-booking.start_date).to_i + 1) %>€ </strong> </p>
+        <p>Total price: <strong><%= booking.house.price * (booking.days) %>€ </strong> </p>
       </div>
   </div>
 <% end %>
