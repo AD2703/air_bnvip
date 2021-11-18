@@ -23,6 +23,7 @@ class HousesController < ApplicationController
       lng: @house.longitude,
       info_window: render_to_string(partial: "info_window", locals: { house: @house })
     }]
+    @unavailable_dates = @house.dates
   end
 
   def new

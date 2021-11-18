@@ -20,4 +20,12 @@ class House < ApplicationRecord
       return 0
     end
   end
+
+  def dates
+    dates = []
+    self.bookings.each do |booking|
+      dates << { from: booking.start_date, to: booking.end_date }
+    end
+    return dates
+  end
 end
