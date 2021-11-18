@@ -17,7 +17,7 @@ class House < ApplicationRecord
       end
       return (sum / self.reviews.count)
     else
-      return 0
+      return 1
     end
   end
 
@@ -28,4 +28,15 @@ class House < ApplicationRecord
     end
     return dates
   end
+
+  def ben
+    sum = 0
+    if self.bookings.present?
+      self.bookings.each do |booking|
+        sum += booking.price.to_i
+      end
+    end
+    return sum
+  end
+
 end

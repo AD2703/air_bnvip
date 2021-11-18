@@ -7,4 +7,7 @@ class Booking < ApplicationRecord
     (self.end_date-self.start_date).to_i + 1
   end
 
+  def price
+    days * self.house.price
+  end
 end
