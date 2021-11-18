@@ -3,9 +3,12 @@ class House < ApplicationRecord
   has_many :reviews, through: :bookings
   belongs_to :user
   has_many_attached :photos
-  validates :country, inclusion: { in: ["Spain", "México", "Italy", "Belgium", "Brazil", "Catalunya"] }
-  validates :description, length: { minimum: 25 }
-  validates :price, numericality: { only_integer: true }
+  validates :country, inclusion: { in: ["Spain", "México", "Italy", "Belgium", "Brazil", "Catalunya"] }, presence: true
+  validates :description, length: { minimum: 25 }, presence: true
+  validates :price, numericality: { only_integer: true }, presence: true
+  validates :name, presence: true
+  validates :photos, presence: true
+  validates :address, presence: true
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
