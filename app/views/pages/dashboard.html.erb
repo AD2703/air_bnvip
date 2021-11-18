@@ -1,16 +1,16 @@
-<%= link_to %>
 <% @bookings.each do |booking| %>
-  <div class="card card-dashboard">
+  <%= link_to house_path(booking.house) do%>
+    <div class="card card-dashboard">
 
-        <%= cl_image_tag booking.house.photos.first.key, class: "card-dash-img"%>
-      <div class="card-dash-info">
-        <p>Email: <%= @user.email %></p>
-        <p>House Booked: <%= booking.house.name %></p>
-        <p>Start: <%= booking.start_date %></p>
-        <p>End: <%= booking.end_date %></p>
-        <p>Total price: <strong><%= booking.house.price * (booking.days) %>€ </strong> </p>
-      </div>
-      <%= button_to 'Add Review', new_booking_review_path(booking),method: :get, class: "btn btn-success float-right" %>
-
-  </div>
+          <%= cl_image_tag booking.house.photos.first.key, class: "card-dash-img"%>
+        <div class="card-dash-info">
+          <p>Email: <%= @user.email %></p>
+          <p>House Booked: <%= booking.house.name %></p>
+          <p>Start: <%= booking.start_date %></p>
+          <p>End: <%= booking.end_date %></p>
+          <p>Total price: <strong><%= booking.house.price * (booking.days) %>€ </strong> </p>
+        </div>
+        <%= button_to 'Add Review', new_booking_review_path(booking),method: :get, class: "btn btn-success float-right" %>
+    </div>
+  <% end %>
 <% end %>
