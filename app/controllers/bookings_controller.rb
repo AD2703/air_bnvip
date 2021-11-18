@@ -1,4 +1,10 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.all
+
+  end
+
+
   def create
     @house = House.find(params[:house_id])
     if current_user == @house.user
