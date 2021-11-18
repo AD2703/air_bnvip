@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: row;
     height: 30vh;
+    width: 70%;
+    margin: auto !important;
+    margin-top: 20px !important;
 }
 
 .card-dash-img{
@@ -11,5 +14,5 @@
 
 .card-dash-info{
   width: 50%;
-  padding: 18px;
+  padding: 16px;
 }
