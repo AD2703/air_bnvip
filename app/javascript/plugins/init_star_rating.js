@@ -9,7 +9,6 @@ const initStarRating = () => {
     });
 
   }
-
 };
 
 export { initStarRating }
