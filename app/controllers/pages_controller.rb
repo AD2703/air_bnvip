@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
+    @bookings = @user.bookings.order('bookings.created_at DESC')
   end
 
   def my_houses
