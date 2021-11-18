@@ -38,6 +38,22 @@
           </tbody>
         </table>
         </div>
+        <br>
+        <div class="d-flex justify-content-between">
+          <h5 class="card-title"><strong>House Reviews: </strong></h5>
+          <h4><small> Average = <strong><%house.avg_review.times do %>
+            <i class="fas fa-star"></i>
+          <% end %> </strong></small></h4>
+        </div>
+          <ul>
+            <% house.reviews.each do |review| %>
+                <li><%(review.rating.to_i).times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+                / <%=review.content%>
+              <% end %>
+          </ul>
+        <br>
         <div class="d-flex justify-content-between">
           <button class="btn btn-primary button"><%= link_to 'Edit', edit_house_path(house) , :class => "button"  %></button>
           <button class="btn btn-danger button"><%= link_to 'Delete', houses_path, method: :delete, data: {confirm: "Are you sure?"} , :class => "button"  %></button>
