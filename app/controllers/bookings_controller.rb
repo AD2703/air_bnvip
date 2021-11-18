@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
       @booking.user = current_user
       @booking.save
     end
-    redirect_to house_path(@house)
+    redirect_to dashboard_path
   end
 
 end
