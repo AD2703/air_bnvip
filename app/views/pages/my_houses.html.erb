@@ -1,46 +1,72 @@
 <div class="myhouses">
-  Total Earnings = <%= @user.total_benefit %>
-  <div class="cards">
-  <% @user.user_houses.each do |house| %>
-    <div class='my-house-card'>
-      <div class='my-house-img'>
-        <%= cl_image_tag house.photos[0].key , alt: "Poster"%>
+  <div class='dashboard-box'>
+    <div class='user-box'>
+      <div class='user-box-top'>
+        <h1 class='user-box-title'>Hi, <%= @user.email %></h1>
+        <p class='user-box-p'>Edit Profile</p>
       </div>
-      <div class='my-house-info'>
-        <div class='house-top'>
-          <div class='house-detail'>
-            <h1 class='house-name'><%=  house.name %></h1>
-            <p><%=  house.description %></p>
-            <p class='house-address'><%= house.address %></p>
-          </div>
-          <div class='house-rating'>
-            <div class='stars'>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p>5 Reviews</p>
-          </div>
+      <div class='user-box-bottom'>
+        <div>
+          <p class='user-box-earning'><%= @user.total_benefit %>€</p>
+          <p class='user-box-p' style="text-decoration: none">Total Earnings</p>
         </div>
-        <div class='house-bottom'>
-          <button type="button" class="btn-myhouse" data-bs-toggle="modal" data-bs-target="#modal-<%= house.id %>">
-            More info
-          </button>
-          <%= render "modal", house: house %>
-          <div class='house-earning'>
-            <h1>
-              5000
-            </h1>
-            <p>Total Earnings</p>
+        <div>
+          <div class='stars-user-box'>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
           </div>
+          <p class='user-box-p' style='text-decoration:none'> Average Rating</p>
+        </div>
+        <div class="btn-user-box">
+          <button type="button" class="btn-myhouse btn-house-left" ><%= link_to "Add a house", new_house_path(@house) %></button>
         </div>
       </div>
     </div>
-  <% end %>
+
+    <div class="cards">
+      <% @user.user_houses.each do |house| %>
+        <div class='my-house-card'>
+          <div class='my-house-img'>
+            <%= cl_image_tag house.photos[0].key , alt: "Poster"%>
+          </div>
+          <div class='my-house-info'>
+            <div class='house-top'>
+              <div class='house-detail'>
+                <h1 class='house-name'><%=  house.name %></h1>
+                <p><%=  house.description %></p>
+                <p class='house-address'><%= house.address %></p>
+              </div>
+              <div class='house-rating'>
+                <div class='stars'>
+                  <%=  %>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p>5 Reviews</p>
+              </div>
+            </div>
+            <div class='house-bottom'>
+              <button type="button" class="btn-myhouse" data-bs-toggle="modal" data-bs-target="#modal-<%= house.id %>">
+              More info
+              </button>
+              <div class='house-earning'>
+                <h1>
+                  <%= house.ben %>
+                </h1>
+                <p>Total Earnings</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= render "modal", house: house %>
+      <% end %>
+    </div>
+
   </div>
-</div>
-<div class="con">
-  <button type="button" class="btn btn-success" style="float: right;"><%= link_to "Add a house", new_house_path(@house) , :class => "button" %></button>
 </div>
