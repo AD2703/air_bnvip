@@ -13,6 +13,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/mycard";
 
 // Stars
 @import "jquery-bar-rating/dist/themes/css-stars";
@@ -126,24 +127,23 @@ p{
   color: white;
 }
 
-.myhouses {
-  margin: 250px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
 
 .table1 {
   margin: 20px;
   border: 1px;
 }
 
-.fas{
+.fa-star {
   color: #FDCC0D;
 }
 
 .card-body {
   margin: 25px;
 }
+
+
+.modal-content {
+  padding: 50px;
 
 .book-container{
   padding: 20px;

@@ -49,5 +49,3 @@ document.addEventListener('turbolinks:load', () => {
 
 
 });
-
-//stars

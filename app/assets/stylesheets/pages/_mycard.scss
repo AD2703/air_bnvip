@@ -1,0 +1,151 @@
+.myhouses{
+  padding: 25px 55px;
+}
+
+.dashboard-box{
+  display:flex;
+}
+
+.cards{
+  margin-top: 0 !important;
+}
+
+.my-house-card{
+  height: 40vh;
+  overflow: hidden;
+  border-radius: 4px;
+  filter: drop-shadow(0px -2px 9px #00000024);
+}
+
+.my-house-img{
+  height: 40%;
+  overflow: hidden;
+  object-fit: cover;
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.my-house-info{
+  height: 60%;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 15px;
+  display: flex;
+  background: #f2f2f2;
+}
+
+.house-top{
+  display: flex;
+}
+
+.house-name {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.house-address{
+  color:gray
+}
+
+.house-detail{
+  p{
+    font-size: 13px;
+  }
+}
+
+.stars i {
+  font-size: 14px;
+}
+
+.house-rating {
+  width: 30%;
+  text-align: end;
+  p{
+  font-size:10px;
+  text-align: end;
+  color: gray
+  }
+}
+
+.cards{
+  grid-template-columns: 1fr 1fr !important;
+}
+
+.house-detail {
+  width:70%;
+
+  p{
+    margin:0
+  }
+}
+
+.house-bottom{
+  display:flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.btn-myhouse{
+  height: fit-content;
+  background: #629066;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 20px;
+}
+
+.house-earning{
+  h1{
+    font-size:25px;
+    font-weight: bold;
+    margin:0;
+    text-align: end;
+  }
+  p{
+    font-size:10px;
+    color: gray;
+    margin:0
+  }
+}
+
+.user-box{
+  height: fit-content;
+  background:#eaeaea;
+  padding: 50px 29px;
+  border-radius: 4px;
+  height: 76vh;
+  filter: drop-shadow(0px -2px 9px #8c8c8c24);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: sticky;
+  top: 16px;
+}
+
+.user-box-p{
+  text-decoration: underline;
+  font-size: 13px;
+  color: gray
+}
+
+.user-box-earning{
+  font-weight: bold;
+  font-size: 35px;
+  margin:0px;
+}
+
+.stars-user-box i{
+  font-size: 20px;
+}
+
+.btn-house-left a{
+  color:white
+}
+
+.btn-user-box{
+  margin-top: 40px;
+}
