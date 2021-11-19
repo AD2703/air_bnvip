@@ -20,7 +20,7 @@ class House < ApplicationRecord
       end
       return (sum / self.reviews.count)
     else
-      return 1
+      return 5
     end
   end
 
