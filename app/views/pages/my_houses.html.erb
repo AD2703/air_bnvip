@@ -1,67 +1,45 @@
 <div class="myhouses">
   Total Earnings = <%= @user.total_benefit %>
+  <div class="cards">
   <% @user.user_houses.each do |house| %>
-    <div class="card">
-      <%= cl_image_tag house.photos[0].key , alt: "Poster", class:"card-image", height: 300 %>
-      <div class="card-body">
-        <div class="d-flex justify-content-between">
-          <h4 class="card-title"><strong><%=  house.name %> </strong></h4>
-          <button type="button" class="btn btn-success float-right"><%= link_to 'See house page', house_path(house) , :class => "button" %></button>
+    <div class='my-house-card'>
+      <div class='my-house-img'>
+        <%= cl_image_tag house.photos[0].key , alt: "Poster"%>
+      </div>
+      <div class='my-house-info'>
+        <div class='house-top'>
+          <div class='house-detail'>
+            <h1 class='house-name'><%=  house.name %></h1>
+            <p><%=  house.description %></p>
+            <p class='house-address'><%= house.address %></p>
+          </div>
+          <div class='house-rating'>
+            <div class='stars'>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>5 Reviews</p>
+          </div>
         </div>
-            <p class="card-text"><%=  house.description %></p>
-        <div class="d-flex justify-content-between">
-          <p class="card-text"><small class="text-muted"><%= house.address %> / <%= house.country %></small></p>
-        </div>
-        <br>
-        <div class="d-flex justify-content-between">
-          <h5 class="card-title"><strong>House Bookings: </strong></h5>
-          <h4><small> Earnings = <strong><%= house.ben %> </strong>€</small></h4>
-        </div>
-        <div class="table1">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Client</th>
-              <th scope="col">Entry</th>
-              <th scope="col">Checkout</th>
-              <th scope="col">Payment</th>
-            </tr>
-          </thead>
-          <tbody>
-          <% house.bookings.each do |booking| %>
-            <tr>
-              <th scope="row"><%= booking.user.email %> </th>
-              <td><%= booking.start_date %></td>
-              <td><%= booking.end_date %></td>
-              <td><strong><%= booking.price %>€ </strong></td>
-            </tr>
-          <% end %>
-          </tbody>
-        </table>
-        </div>
-        <br>
-        <div class="d-flex justify-content-between">
-          <h5 class="card-title"><strong>House Reviews: </strong></h5>
-          <h4><small> Average = <strong><%house.avg_review.times do %>
-            <i class="fas fa-star"></i>
-          <% end %> </strong></small></h4>
-        </div>
-          <ul>
-            <% house.reviews.each do |review| %>
-                <li><%(review.rating.to_i).times do %>
-                  <i class="fas fa-star"></i>
-                <% end %>
-                / <%=review.content%>
-              <% end %>
-          </ul>
-        <br>
-        <div class="d-flex justify-content-between">
-          <button class="btn btn-primary button"><%= link_to 'Edit', edit_house_path(house) , :class => "button"  %></button>
-          <button class="btn btn-danger button"><%= link_to 'Delete', house_path(house), method: :delete, data: {confirm: "Are you sure?"} , :class => "button"  %></button>
+        <div class='house-bottom'>
+          <button type="button" class="btn-myhouse" data-bs-toggle="modal" data-bs-target="#modal-<%= house.id %>">
+            More info
+          </button>
+          <%= render "modal", house: house %>
+          <div class='house-earning'>
+            <h1>
+              5000
+            </h1>
+            <p>Total Earnings</p>
+          </div>
         </div>
       </div>
     </div>
   <% end %>
+  </div>
 </div>
 <div class="con">
   <button type="button" class="btn btn-success" style="float: right;"><%= link_to "Add a house", new_house_path(@house) , :class => "button" %></button>

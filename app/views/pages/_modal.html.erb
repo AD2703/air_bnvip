@@ -1,0 +1,64 @@
+<!-- Modal -->
+<div class="modal fade" id="modal-<%= house.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="card-content">
+        <div class="d-flex justify-content-between">
+          <h4 class="card-title"><strong><%=  house.name %> </strong></h4>
+          <button type="button" class="btn btn-success float-right"><%= link_to 'See house page', house_path(house) , :class => "button" %></button>
+        </div>
+            <p class="card-text"><%=  house.description %></p>
+        <div class="d-flex justify-content-between">
+          <p class="card-text"><small class="text-muted"><%= house.address %> / <%= house.country %></small></p>
+        </div>
+        <br>
+        <div class="d-flex justify-content-between">
+          <h5 class="card-title"><strong>House Bookings: </strong></h5>
+          <h4><small> Earnings = <strong><%= house.ben %> </strong>€</small></h4>
+        </div>
+        <div class="table1">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Client</th>
+              <th scope="col">Entry</th>
+              <th scope="col">Checkout</th>
+              <th scope="col">Payment</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% house.bookings.each do |booking| %>
+            <tr>
+              <th scope="row"><%= booking.user.email %> </th>
+              <td><%= booking.start_date %></td>
+              <td><%= booking.end_date %></td>
+              <td><strong><%= booking.price %>€ </strong></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        </div>
+        <br>
+        <div class="d-flex justify-content-between">
+          <h5 class="card-title"><strong>House Reviews: </strong></h5>
+          <h4><small> Average = <strong><%house.avg_review.times do %>
+            <i class="fas fa-star"></i>
+          <% end %> </strong></small></h4>
+        </div>
+          <ul>
+            <% house.reviews.each do |review| %>
+                <li><%(review.rating.to_i).times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+                / </i> <%=review.content%>
+              <% end %>
+          </ul>
+        <br>
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-primary button"><%= link_to 'Edit', edit_house_path(house) , :class => "button"  %></button>
+          <button class="btn btn-danger button"><%= link_to 'Delete', house_path(house), method: :delete, data: {confirm: "Are you sure?"} , :class => "button"  %></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
