@@ -6,7 +6,7 @@ House.delete_all
 User.delete_all
 puts "DB clean"
 
-user1 = User.create(email: 'filipo@gmail.com', password: 'la pizza he molto buona')
+user1 = User.create(email: 'filipo@gmail.com', password: '123456')
 user2 = User.create(email: 'carles@gmail.com', password: '123456')
 user3 = User.create(email: 'max@gmail.com', password: '123456')
 user4 = User.create(email: 'alejandro@gmail.com', password: '123456')
@@ -65,19 +65,19 @@ house5.photos.attach(io: File.open(photo13), filename: 'nes.png', content_type: 
 house5.photos.attach(io: File.open(photo14), filename: 'nes.png', content_type: 'image/png')
 house5.save
 
-house6 = House.new(name: 'Luxury Apartment', description: "Wonderful modern style apartment", user: user1,
+house6 = House.new(name: 'Luxury Apartment', description: "Wonderful modern style apartment", user: user2,
                       address: "Mexico City, Estado de México, Mexico", price: 4000, country: 'México')
 house6.photos.attach(io: File.open(photo15), filename: 'nes.png', content_type: 'image/png')
 house6.photos.attach(io: File.open(photo16), filename: 'nes.png', content_type: 'image/png')
 house6.save
 
-house7 = House.new(name: 'Luxury Mansion', description: "Giant mansion in Mexico with modern design", user: user1,
+house7 = House.new(name: 'Luxury Mansion', description: "Giant mansion in Mexico with modern design", user: user3,
                       address: "Querétaro City, Querétaro, Mexico", price: 6800, country: 'México')
 house7.photos.attach(io: File.open(photo21), filename: 'nes.png', content_type: 'image/png')
 house7.photos.attach(io: File.open(photo22), filename: 'nes.png', content_type: 'image/png')
 house7.save
 
-house8 = House.new(name: 'Luxury house', description: "Amazing family house in Mexico with a lot of green", user: user1,
+house8 = House.new(name: 'Luxury house', description: "Amazing family house in Mexico with a lot of green", user: user4,
                       address: "Monterrey, Nuevo León, Mexico", price: 9800, country: 'México')
 house8.photos.attach(io: File.open(photo11), filename: 'nes.png', content_type: 'image/png')
 house8.photos.attach(io: File.open(photo12), filename: 'nes.png', content_type: 'image/png')
@@ -89,19 +89,19 @@ house9.photos.attach(io: File.open(photo3), filename: 'nes.png', content_type: '
 house9.photos.attach(io: File.open(photo5), filename: 'nes.png', content_type: 'image/png')
 house9.save
 
-house10 = House.new(name: 'Luxury Apartment', description: "Beutiful apartment with modern style", user: user1,
+house10 = House.new(name: 'Luxury Apartment', description: "Beutiful apartment with modern style", user: user2,
                       address: "Santiago de Compostela, Galicia, Spain", price: 6600, country: 'Spain')
 house10.photos.attach(io: File.open(photo15), filename: 'nes.png', content_type: 'image/png')
 house10.photos.attach(io: File.open(photo16), filename: 'nes.png', content_type: 'image/png')
 house10.save
 
-house11 = House.new(name: 'Luxury Mansion', description: "Enormus mansion with modern design", user: user1,
+house11 = House.new(name: 'Luxury Mansion', description: "Enormus mansion with modern design", user: user3,
                       address: "Granada, Andalucía, Spain", price: 4900, country: 'Spain')
 house11.photos.attach(io: File.open(photo17), filename: 'nes.png', content_type: 'image/png')
 house11.photos.attach(io: File.open(photo18), filename: 'nes.png', content_type: 'image/png')
 house11.save
 
-house12 = House.new(name: 'Luxury house', description: "Amazing family house in Spain with a lot of green", user: user1,
+house12 = House.new(name: 'Luxury house', description: "Amazing family house in Spain with a lot of green", user: user4,
                       address: "Valencia, Comunitat Valenciana, Spain", price: 5400, country: 'Spain')
 house12.photos.attach(io: File.open(photo19), filename: 'nes.png', content_type: 'image/png')
 house12.photos.attach(io: File.open(photo20), filename: 'nes.png', content_type: 'image/png')
@@ -113,19 +113,19 @@ house13.photos.attach(io: File.open(photo21), filename: 'nes.png', content_type:
 house13.photos.attach(io: File.open(photo22), filename: 'nes.png', content_type: 'image/png')
 house13.save
 
-house14 = House.create(name: 'Luxury Villa', description: "Old style villa in the forests of Belgium", user: user1,
+house14 = House.create(name: 'Luxury Villa', description: "Old style villa in the forests of Belgium", user: user2,
                       address: "Berchem, Vlaanderen, Belgium", price: 9000, country: 'Belgium')
 house14.photos.attach(io: File.open(photo16), filename: 'nes.png', content_type: 'image/png')
 house14.photos.attach(io: File.open(photo10), filename: 'nes.png', content_type: 'image/png')
 house14.save
 
-house15 = House.create(name: 'Luxury Mansion', description: "Modern style mansion in Belgium", user: user1,
+house15 = House.create(name: 'Luxury Mansion', description: "Modern style mansion in Belgium", user: user3,
                       address: "Borgerhout, Vlaanderen, Belgium", price: 7000, country: 'Belgium')
 house15.photos.attach(io: File.open(photo11), filename: 'nes.png', content_type: 'image/png')
 house15.photos.attach(io: File.open(photo12), filename: 'nes.png', content_type: 'image/png')
 house15.save
 
-house16 = House.create(name: 'Luxury Chalet', description: "Newly constructed chalet in Belgium", user: user1,
+house16 = House.create(name: 'Luxury Chalet', description: "Newly constructed chalet in Belgium", user: user4,
                       address: "Hoboken, Vlaanderen, Belgium", price: 6000, country: 'Belgium')
 house16.photos.attach(io: File.open(photo13), filename: 'nes.png', content_type: 'image/png')
 house16.photos.attach(io: File.open(photo5), filename: 'nes.png', content_type: 'image/png')
@@ -137,19 +137,19 @@ house17.photos.attach(io: File.open(photo15), filename: 'nes.png', content_type:
 house17.photos.attach(io: File.open(photo16), filename: 'nes.png', content_type: 'image/png')
 house17.save
 
-house18 = House.create(name: 'Luxury Villa', description: "Newly constructed Villa in Brazil", user: user1,
+house18 = House.create(name: 'Luxury Villa', description: "Newly constructed Villa in Brazil", user: user2,
                       address: "São Paulo, Brazil", price: 4000, country: 'Brazil')
 house18.photos.attach(io: File.open(photo17), filename: 'nes.png', content_type: 'image/png')
 house18.photos.attach(io: File.open(photo18), filename: 'nes.png', content_type: 'image/png')
 house18.save
 
-house19 = House.create(name: 'Luxury Mansion', description: "Giant mansion in Brazil", user: user1,
+house19 = House.create(name: 'Luxury Mansion', description: "Giant mansion in Brazil", user: user3,
                       address: "Lagoa de Dentro, Paraíba, Brazil", price: 8000, country: 'Brazil')
 house19.photos.attach(io: File.open(photo3), filename: 'nes.png', content_type: 'image/png')
 house19.photos.attach(io: File.open(photo20), filename: 'nes.png', content_type: 'image/png')
 house19.save
 
-house20 = House.create(name: 'Luxury Sea house', description: "Luxurious sea house with amazing view", user: user1,
+house20 = House.create(name: 'Luxury Sea house', description: "Luxurious sea house with amazing view", user: user4,
                       address: "Chácara Santa Maria, São Paulo, Brazil", price: 9000, country: 'Brazil')
 house20.photos.attach(io: File.open(photo21), filename: 'nes.png', content_type: 'image/png')
 house20.photos.attach(io: File.open(photo22), filename: 'nes.png', content_type: 'image/png')
@@ -161,19 +161,19 @@ house21.photos.attach(io: File.open(photo11), filename: 'nes.png', content_type:
 house21.photos.attach(io: File.open(photo12), filename: 'nes.png', content_type: 'image/png')
 house21.save
 
-house22 = House.create(name: 'Luxury Villa', description: "Modern villa in catalonia", user: user1,
+house22 = House.create(name: 'Luxury Villa', description: "Modern villa in catalonia", user: user2,
                       address: "Cadaqués, Catalunya, Spain", price: 8000, country: 'Catalunya')
 house22.photos.attach(io: File.open(photo13), filename: 'nes.png', content_type: 'image/png')
 house22.photos.attach(io: File.open(photo14), filename: 'nes.png', content_type: 'image/png')
 house22.save
 
-house23 = House.create(name: 'Luxury apartment', description: "Modern style apartment in catalonia", user: user1,
+house23 = House.create(name: 'Luxury apartment', description: "Modern style apartment in catalonia", user: user3,
                       address: "Barcelona, Catalunya, Spain", price: 7000, country: 'Catalunya')
 house23.photos.attach(io: File.open(photo15), filename: 'nes.png', content_type: 'image/png')
 house23.photos.attach(io: File.open(photo4), filename: 'nes.png', content_type: 'image/png')
 house23.save
 
-house24 = House.create(name: 'Luxury mansion', description: "Enormous mansion in catalonia", user: user1,
+house24 = House.create(name: 'Luxury mansion', description: "Enormous mansion in catalonia", user: user4,
                       address: "Girona, Catalunya, Spain", price: 5000, country: 'Catalunya')
 house24.photos.attach(io: File.open(photo17), filename: 'nes.png', content_type: 'image/png')
 house24.photos.attach(io: File.open(photo18), filename: 'nes.png', content_type: 'image/png')

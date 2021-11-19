@@ -70,14 +70,15 @@ p{
   }
 }
 
-.con1 {
-  margin-left: 250px;
-  margin-right: 250px;
-  margin-top: 0px;
+.con12 {
+  margin-left: 20px;
+  margin-right: 20px;
   background-color: white;
   padding: 150px;
   padding-top: 75px;
   padding-bottom: 150px;
+  justify-content: space-between;
+  position:static;
   button{
     margin-top: 50px;
     color: white !important;
@@ -87,27 +88,20 @@ p{
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
 }
-
+.con12 .con1{
+  margin-left: 7%;
+}
 .con1 h4 {
   margin-top: 16px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.con1 .location{
+.con12 .con1 .location{
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.date-booked {
-  margin-left: 250px;
-  margin-top: 50px;
-  margin-right: 250px;
-  background-color: white;
-  padding: 150px;
-  padding-top: 75px;
-  padding-bottom: 150px;
-}
 
 .con2 {
   margin-left: 250px;
@@ -124,9 +118,8 @@ p{
 }
 
 .mapxx {
-  margin-left: 250px;
+  margin: 0px;
   margin-top: 50px;
-  margin-right: 250px;
 }
 
 #sweet-alert-demo {
@@ -148,6 +141,15 @@ p{
   margin: 25px;
 }
 
+
 .modal-content {
   padding: 50px;
+
+.book-container{
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #eeeeee;
+  // height: 100%;
+  // width: 40%;
+  // margin-left: 15%;
 }

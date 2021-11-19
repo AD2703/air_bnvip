@@ -15,34 +15,63 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<div class="con12 d-flex">
+  <div class="con1">
+    <div class="d-flex justify-content-between">
+      <h3><%= @house.name %></h3>
+      <div id="price">
+        <h3><%= @house.price %>€ / night</h3>
+      </div>
+    </div>
+    <h4><%= @house.description %></h4>
+    <br>
+    <h6><strong>Commodities</strong></h3>
+    <ul>
+      <li>10 Bedrooms</li>
+      <li>9 Full Bathrooms</li>
+      <li>Full equiped Kitchen with a chef 24/7</li>
+      <li>Elevator</li>
+      <li>Car garage (space for 5 cars)</li>
+      <li>Full fridge</li>
+      <li>Pool with views</li>
+      <li>Jacuzzi with hydro massage</li>
+      <li>Sauna</li>
 
-<div class="con1">
-  <div class="d-flex justify-content-between">
-    <h2><%= @house.name %></h2>
-    <h2><%= @house.price %>€ / night</h2>
+    </ul>
+    <div class="location">
+      <h6>Address: <%= @house.address %></h6>
+      <h6>Country: <%= @house.country %></h6>
+    </div>
+    <h4>- Reviews: <%@house.avg_review.times do %>
+              <i class="fas fa-star" style="font-size:50%;"></i>
+            <% end %>
+            <%(5 - @house.avg_review).times do %>
+            <i class="fas fa-star" style="color: #d9d9d9; font-size:50%;"></i>
+            <% end %>
+          </h4>
+          <ul>
+            <% @house.reviews.each do |review| %>
+                <li><%(review.rating.to_i).times do %>
+                  <i class="fas fa-star" style="font-size:75%;"></i>
+                <% end %>
+                <%(5 - review.rating.to_i).times do %>
+                  <i class="fas fa-star" style="color: #d9d9d9; font-size:75%;"></i>
+                <% end %>
+                / <%=review.content%>
+              <% end %>
+          </ul>
+    </div>
+    <div class="book-container">
+      <div class="date-booked m-auto" data-dates="<%= @unavailable_dates.to_json %>">
+        <h3>Book now!</h3>
+        <%= simple_form_for [@house,@booking] do |f| %>
+        <%= f.input :start_date, as: :string, required: false,label: false, input_html: {class: "datepicker", style: "display:none"} %>
+        <div class="submission btn btn-primary" id= "sweet-alert-demo">Confirm
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <h4><%= @house.description %></h4>
-  <br>
-  <h6><strong>Commodities</strong></h3>
-  <ul>
-  <li>10 Bedrooms</li>
-  <li>9 Full Bathrooms</li>
-  <li>Full equiped Kitchen with a chef 24/7</li>
-  <li>Elevator</li>
-  <li>Car garage (space for 5 cars)</li>
-  <li>Full fridge</li>
-  <li>Pool with views</li>
-  <li>Jacuzzi with hydro massage</li>
-  <li>Sauna</li>
-
-  </ul>
-  <div class="location">
-    <h6>Address: <%= @house.address %></h6>
-    <h6>Country: <%= @house.country %></h6>
-  </div>
-  <h4>Average Reviews: <%@house.avg_review.times do %>
-            <i class="fas fa-star"></i>
-          <% end %></h4>
 </div>
 
 <div class="mapxx">
@@ -51,27 +80,4 @@
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-</div>
-
-<div class="date-booked" data-dates="<%= @unavailable_dates.to_json %>">
-<h3>Book now!</h3>
-<%= simple_form_for [@house,@booking] do |f| %>
-<%= f.label "Dates" %>
-<%= f.input :start_date, as: :string, required: false,label: false, input_html: {class: "datepicker"} %>
-<div class="submission btn btn-primary" id= "sweet-alert-demo">Confirm
-</div>
-<% end %>
-</div>
-
-
-<div class="con2">
-<h4>- Reviews:</h4>
-<ul>
-  <% @house.reviews.each do |review| %>
-      <li><%(review.rating.to_i).times do %>
-        <i class="fas fa-star"></i>
-      <% end %>
-      / <%=review.content%>
-    <% end %>
-</ul>
 </div>

@@ -37,15 +37,21 @@
         <%= cl_image_tag house.photos[0].key , alt: "Poster", class:"card-image", height: 300 %>
         <div class="card-body">
           <div class="d-flex justify-content-between">
-          <h5 class="card-title"><strong><%=  house.name %>   </strong><%house.avg_review.times do %>
-            <i class="fas fa-star"></i>
-          <% end %></h5>
-          <h4><small> <strong><%=house.price%> </strong>€ / night </small></h4>
-        </div>
+          <h5 class="card-title"><strong><%=  house.name %></strong></h5>
+          <h5>
+          <%house.avg_review.times do %>
+          <i class="fas fa-star" style="font-size:75%;"></i>
+          <% end %>
+          <%(5 -house.avg_review).times do %>
+          <i class="fas fa-star" style="color: #d9d9d9; font-size:75%;"></i>
+          <% end %>
+          <h5>
+          </div>
           <p class="card-text"><%=  house.description %></p>
+          <p class="card-text"><small class="text-muted"><%= house.address %> / <%= house.country %></small></p>
           <div class="d-flex justify-content-between">
-            <p class="card-text"><small class="text-muted"><%= house.address %> / <%= house.country %></small></p>
             <button type="button" class="btn btn-primary float-right"><%= link_to 'See more', house_path(house) , :class => "button" %></button>
+            <h4><small> <strong><%=house.price%> </strong>€ / night </small></h4>
           </div>
         </div>
       </div>
