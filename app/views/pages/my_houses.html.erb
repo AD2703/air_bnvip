@@ -12,11 +12,12 @@
         </div>
         <div>
           <div class='stars-user-box'>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <%@user.avg_review_total.times do %>
+             <i class="fas fa-star"></i>
+            <% end %>
+            <%(5 - @user.avg_review_total).times do %>
+            <i class="fas fa-star" style="color: #d9d9d9;"></i>
+            <% end %>
           </div>
           <p class='user-box-p' style='text-decoration:none'> Average Rating</p>
         </div>
@@ -41,14 +42,14 @@
               </div>
               <div class='house-rating'>
                 <div class='stars'>
-                  <%=  %>
+                  <%house.avg_review.times do %>
                   <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                  <% end %>
+                  <%(5 -house.avg_review).times do %>
+                  <i class="fas fa-star" style="color: #d9d9d9;"></i>
+                  <% end %>
                 </div>
-                <p>5 Reviews</p>
+                <p><%=  house.reviews.count %> Reviews</p>
               </div>
             </div>
             <div class='house-bottom'>

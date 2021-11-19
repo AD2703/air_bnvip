@@ -20,4 +20,15 @@ class User < ApplicationRecord
     return sum
   end
 
+  def avg_review_total
+    if self.houses.present?
+      sum = 0
+      self.houses.each do |house|
+        sum += house[:avg_review].to_i
+      end
+      return (sum / self.houses.count)
+    else
+      return 5
+    end
+  end
 end
