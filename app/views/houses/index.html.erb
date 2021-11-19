@@ -29,40 +29,57 @@
 </div>
 <% end %>
 
-<div>
-  <div class="row">
-    <div class="col-7">
-    <% @houses.each do |house| %>
-      <div class="card">
-        <%= cl_image_tag house.photos[0].key , alt: "Poster", class:"card-image", height: 300 %>
-        <div class="card-body">
-          <div class="d-flex justify-content-between">
-          <h5 class="card-title"><strong><%=  house.name %></strong></h5>
-          <h5>
-          <%house.avg_review.times do %>
-          <i class="fas fa-star" style="font-size:75%;"></i>
-          <% end %>
-          <%(5 -house.avg_review).times do %>
-          <i class="fas fa-star" style="color: #d9d9d9; font-size:75%;"></i>
-          <% end %>
-          <h5>
-          </div>
-          <p class="card-text"><%=  house.description %></p>
-          <p class="card-text"><small class="text-muted"><%= house.address %> / <%= house.country %></small></p>
-          <div class="d-flex justify-content-between">
-            <button type="button" class="btn btn-primary float-right"><%= link_to 'See more', house_path(house) , :class => "button" %></button>
-            <h4><small> <strong><%=house.price%> </strong>€ / night </small></h4>
-          </div>
+<div class="myhouses">
+  <div class='dashboard-box'>
+    <div class='user-box' id="map-container-show">
+      <div class="map-subbox">
+        <div id="map"
+          style="width: 100%; height: 100%"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
-    <% end %>
     </div>
-    <div class="col-5">
-      <div id="map"
-      style="width: 100%"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+
+    <div class="cards">
+      <% @houses.each do |house| %>
+        <div class='my-house-card'>
+          <div class='my-house-img'>
+            <%= cl_image_tag house.photos[0].key , alt: "Poster"%>
+          </div>
+          <div class='my-house-info'>
+            <div class='house-top'>
+              <div class='house-detail'>
+                <h1 class='house-name'><%=  house.name %></h1>
+                <p><%=  house.description %></p>
+                <p class='house-address'><%= house.address %></p>
+              </div>
+              <div class='house-rating'>
+                <div class='stars'>
+                  <%house.avg_review.times do %>
+                  <i class="fas fa-star"></i>
+                  <% end %>
+                  <%(5 -house.avg_review).times do %>
+                  <i class="fas fa-star" style="color: #d9d9d9;"></i>
+                  <% end %>
+                </div>
+                <p><%=  house.reviews.count %> Reviews</p>
+              </div>
+            </div>
+            <div class='house-bottom'>
+              <button type="button" class="btn-myhouse">
+              <%= link_to 'See more', house_path(house), :class => "button"%>
+              </button>
+              <div class='house-earning'>
+                <h1>
+                  <%= house.price %>
+                </h1>
+                <p>Per night</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

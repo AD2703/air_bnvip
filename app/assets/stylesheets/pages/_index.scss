@@ -72,3 +72,19 @@ p {
 li {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+#map-container-show{
+    width: 40%;
+    height: 75vh;
+    padding: 0;
+}
+
+.map-subbox{
+  height: 100%;
+}
+
+.mapboxgl-canvas{
+  height: 100% !important;
+  object-fit: cover !important;
+  width: 100% !important;
+}
